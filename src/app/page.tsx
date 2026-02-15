@@ -424,7 +424,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="w-1 h-20 bg-gradient-to-b from-blue-500 to-transparent mx-auto mb-10 opacity-20"></div>
           <p className="text-slate-500 font-black tracking-[0.5em] text-xs mb-4">DESIGNED BY KRMA</p>
-          <p className="text-slate-600 text-[10px] font-bold tracking-widest uppercase">&copy; 2026 NEXUS PROTOCOL. ALL RIGHTS RESERVED.</p>
+          <p className="text-slate-600 text-[10px] font-bold tracking-widest uppercase">&copy; 2026 KRMA DEVLOPER. ALL RIGHTS RESERVED.</p>
         </div>
       </footer>
     </main>
