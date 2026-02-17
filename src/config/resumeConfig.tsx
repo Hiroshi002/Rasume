@@ -427,7 +427,7 @@ export const resumeConfig = {
   // 15. ตั้งค่าเพลงพื้นหลัง (Background Music Settings)
   // ==========================================
   musicConfig: {
-    url: "/music/Nightcore - Umbrella (Rock Version) (Lyrics).mp3", // ลิงก์ไฟล์เพลง (อ้างอิงจากโฟลเดอร์ public)
+    url: "/music/music.mp3", // ลิงก์ไฟล์เพลง (อ้างอิงจากโฟลเดอร์ public)
     volume: 0.02, // ระดับเสียงเริ่มต้น (0.01 - 1.0) แนะนำ 0.02 (2%)
     autoplayOnInteraction: true, // ให้เล่นอัตโนมัติเมื่อมีการขยับเมาส์หรือคลิก
     loop: true, // ให้เพลงเล่นวนซ้ำ
