@@ -10,6 +10,7 @@ interface Project {
   icon: React.ReactNode;
   desc: string;
   tech: string;
+  link?: string;
 }
 
 export default function CodingPage() {
@@ -128,9 +129,20 @@ export default function CodingPage() {
                     </div>
 
                     <div className="pt-4 md:pt-6 flex items-center justify-center md:justify-start">
-                      <button className="flex items-center gap-2 text-blue-400 hover:text-white font-black text-[10px] md:text-xs uppercase tracking-[0.2em] group/btn transition-colors">
-                        Inspect Core <ChevronRight size={14} className="md:w-4 md:h-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
+                      {project.link ? (
+                        <Link 
+                          href={project.link} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-blue-400 hover:text-white font-black text-[10px] md:text-xs uppercase tracking-[0.2em] group/btn transition-colors"
+                        >
+                          Inspect Core <ChevronRight size={14} className="md:w-4 md:h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </Link>
+                      ) : (
+                        <button className="flex items-center gap-2 text-blue-400 hover:text-white font-black text-[10px] md:text-xs uppercase tracking-[0.2em] group/btn transition-colors">
+                          Inspect Core <ChevronRight size={14} className="md:w-4 md:h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

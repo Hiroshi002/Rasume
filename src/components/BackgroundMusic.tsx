@@ -6,7 +6,9 @@ import { resumeConfig } from '../config/resumeConfig';
 
 export const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const shouldPlayRef = useRef(true); // Control if music is allowed to play
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTime, setCurrentTime] = useState("0:00");
@@ -60,6 +62,9 @@ export const BackgroundMusic = () => {
   // จัดการการโต้ตอบเพื่อเล่นเพลง (Autoplay Recovery)
   useEffect(() => {
     const startAudio = async () => {
+      // If music is explicitly stopped (e.g. 404 page), do not attempt to play
+      if (!shouldPlayRef.current) return;
+
       if (audioRef.current && audioRef.current.paused) {
         try {
           await audioRef.current.play();
@@ -88,6 +93,42 @@ export const BackgroundMusic = () => {
     return cleanup;
   }, []);
 
+  useEffect(() => {
+    const handleStop = () => {
+      shouldPlayRef.current = false; // Disallow playing
+      if (audioRef.current) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+        setIsVisible(false); // Hide the music player
+      }
+    };
+
+    const handlePlay = () => {
+      shouldPlayRef.current = true; // Allow playing
+      if (audioRef.current) {
+        audioRef.current.play().catch(() => {
+          // Auto-play might be blocked, wait for interaction
+          setHasInteracted(false);
+        });
+        setIsPlaying(true);
+        setIsVisible(true); // Show the music player
+      }
+    };
+
+    window.addEventListener('music:stop', handleStop);
+    window.addEventListener('music:play', handlePlay);
+
+    // Check if we are already on 404 page (missed event)
+    if ((window as any).is404) {
+      handleStop();
+    }
+
+    return () => {
+      window.removeEventListener('music:stop', handleStop);
+      window.removeEventListener('music:play', handlePlay);
+    };
+  }, []);
+
   const toggleMusic = () => {
     if (!audioRef.current) return;
 
@@ -104,6 +145,8 @@ export const BackgroundMusic = () => {
     audioRef.current.currentTime = newTime;
     setProgress(Number(e.target.value));
   };
+
+  if (!isVisible) return null;
 
   return (
     <div className="fixed bottom-6 right-6 z-[100] flex items-center gap-3">
