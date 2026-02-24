@@ -37,7 +37,8 @@ export const resumeConfig = {
     role: "Developer Engineering", // ตำแหน่งงานหลัก
     image: "https://img5.pic.in.th/file/secure-sv1/1000094579.png", // URL รูปโปรไฟล์
     bio: "A dedicated [Sophomore/Junior] Computer Engineering student with over [7-8] years of hands-on experience in software development. Proficient in a comprehensive tech stack, ranging from Backend Infrastructure (Node.js, Python, Lua) to Frontend Experience (React, Next.js, TypeScript). Developed a strong logical foundation and engineering mindset through early exposure to Java and C# since middle school. I am eager to leverage my technical expertise and problem-solving skills to build scalable solutions and contribute to a fast-paced professional team.", // คำแนะนำตัวสั้นๆ
-    philosophy: "Turning complex logic into elegant, high-performance digital experiences.", // คติประจำใจหรือปรัชญาการทำงาน
+    philosophy:
+      "Turning complex logic into elegant, high-performance digital experiences.", // คติประจำใจหรือปรัชญาการทำงาน
   },
 
   // ==========================================
@@ -83,25 +84,40 @@ export const resumeConfig = {
   // 4. สถิติภาพรวม (Quick Stats) - แสดงที่หน้าแรก
   // ==========================================
   stats: [
-    { 
+    {
       label: "Experience", // หัวข้อสถิติ
       value: "8+", // ค่าตัวเลข/ข้อความที่ต้องการเน้น
       unit: "Years", // หน่วยของสถิติ
-      icon: <Briefcase size={20} /> // ไอคอนประกอบ
+      icon: <Briefcase size={20} />, // ไอคอนประกอบ
     },
-    { label: "Projects", value: "5+", unit: "Completed", icon: <FolderCode size={20} /> },
-    { label: "Skills", value: "20+", unit: "Mastered", icon: <Star size={20} /> },
-    { label: "Languages", value: "3", unit: "Fluent", icon: <Languages size={20} /> },
+    {
+      label: "Projects",
+      value: "5+",
+      unit: "Completed",
+      icon: <FolderCode size={20} />,
+    },
+    {
+      label: "Skills",
+      value: "20+",
+      unit: "Mastered",
+      icon: <Star size={20} />,
+    },
+    {
+      label: "Languages",
+      value: "3",
+      unit: "Fluent",
+      icon: <Languages size={20} />,
+    },
   ],
 
   // ==========================================
   // 5. ทักษะการเขียนโปรแกรม (Programming Skills)
   // ==========================================
   frontendSkills: [
-    { 
+    {
       name: "HTML5 & PUG", // ชื่อภาษา/เครื่องมือ
       level: 75, // ระดับความเชี่ยวชาญ (0-100)
-      color: "from-orange-400 to-orange-600" // สี Gradient (Tailwind Class)
+      color: "from-orange-400 to-orange-600", // สี Gradient (Tailwind Class)
     },
     { name: "CSS3 & SASS", level: 70, color: "from-blue-400 to-blue-600" },
     {
@@ -133,10 +149,10 @@ export const resumeConfig = {
   // 6. ทักษะด้านซอฟต์แวร์ (Software Skills)
   // ==========================================
   softwareSkills: [
-    { 
+    {
       name: "VS Code", // ชื่อโปรแกรม
       level: 95, // ระดับความเชี่ยวชาญ (0-100)
-      color: "#007ACC" // สีหลักของโปรแกรม (Hex Code)
+      color: "#007ACC", // สีหลักของโปรแกรม (Hex Code)
     },
     { name: "Adobe Photoshop", level: 85, color: "#31A8FF" },
     { name: "Adobe After Effects", level: 80, color: "#CF96FD" },
@@ -148,10 +164,10 @@ export const resumeConfig = {
   // 7. สิ่งที่สนใจ (Interests) - เมนูนำทางหน้าแรก
   // ==========================================
   interests: [
-    { 
+    {
       name: "Gaming", // ชื่อหัวข้อที่สนใจ
       icon: <Gamepad2 size={24} />, // ไอคอนที่ใช้
-      href: "/gaming" // ลิงก์ไปยังหน้าย่อย
+      href: "/gaming", // ลิงก์ไปยังหน้าย่อย
     },
     { name: "Music", icon: <Music size={24} />, href: "/music" },
     { name: "Coding", icon: <Code size={24} />, href: "/coding" },
@@ -166,14 +182,16 @@ export const resumeConfig = {
       company: "Freelance Developer", // ชื่อบริษัทหรือสถานที่ทำงาน
       role: "Fullstack Developer", // ตำแหน่งงาน
       period: "2024 - Present", // ช่วงเวลาที่ทำงาน
-      description: "Developing custom web applications and backend systems for various clients using Node.js, React, and Python.", // รายละเอียดงาน
+      description:
+        "Developing custom web applications and backend systems for various clients using Node.js, React, and Python.", // รายละเอียดงาน
       icon: <Code size={20} />, // ไอคอนประกอบ
     },
     {
       company: "Tech Solutions Co.",
       role: "Backend Intern",
       period: "2024 - Present",
-      description: "Assisted in building scalable API services and database optimization using PostgreSQL and Node.js.",
+      description:
+        "Assisted in building scalable API services and database optimization using PostgreSQL and Node.js.",
       icon: <Cpu size={20} />,
     },
   ],
@@ -186,21 +204,24 @@ export const resumeConfig = {
       school: "Chiang Rai Rajabhat University", // ชื่อสถานศึกษา
       degree: "Bachelor of Computer Engineering", // ระดับการศึกษา/สาขาวิชา
       period: "2024 - Present", // ปีที่ศึกษา
-      description: "Focused on Software Engineering, Data Structures, and Database Management Systems.", // รายละเอียดการศึกษา
+      description:
+        "Focused on Software Engineering, Data Structures, and Database Management Systems.", // รายละเอียดการศึกษา
       icon: <GraduationCap size={20} />, // ไอคอนประกอบ
     },
     {
       school: "Nakornwittayakhom School",
       degree: "High School Diploma (Science-Math)",
       period: "2017 - 2023",
-      description: "Strong foundation in mathematics and logic-based problem solving.",
+      description:
+        "Strong foundation in mathematics and logic-based problem solving.",
       icon: <BookOpen size={20} />,
     },
     {
       school: "Online Certifications",
       degree: "Learning enhance your skills and advance",
       period: "Present",
-      description: "Flexible learning opportunities to enhance your skills and advance your career, with options available from various reputable institutions",
+      description:
+        "Flexible learning opportunities to enhance your skills and advance your career, with options available from various reputable institutions",
       icon: <BookOpen size={20} />,
     },
   ],
@@ -274,9 +295,9 @@ export const resumeConfig = {
     title: "Favorite Music", // หัวข้อหลักของหน้า
     subtitle: "My favorite genres and top tracks", // คำอธิบายหน้า
     genres: [
-      { 
+      {
         name: "Nightcore", // ชื่อแนวเพลง
-        icon: <Disc className="text-purple-500" /> // ไอคอนแนวเพลง
+        icon: <Disc className="text-purple-500" />, // ไอคอนแนวเพลง
       },
       { name: "Lo-fi / Chill", icon: <Radio className="text-blue-500" /> },
       { name: "J-Pop", icon: <Mic2 className="text-rose-500" /> },
@@ -314,8 +335,9 @@ export const resumeConfig = {
   // ==========================================
   codingPage: {
     title: "Coding Projects", // หัวข้อหลัก
-    subtitle: "Architecting robust solutions and innovative digital experiences", // คำอธิบายหน้า
-    projects: [], // รายการโปรเจกต์ (ยังไม่ได้ใส่ข้อมูล)
+    subtitle:
+      "Architecting robust solutions and innovative digital experiences", // คำอธิบายหน้า
+    projects: [],
   },
 
   // ==========================================
@@ -433,7 +455,18 @@ export const resumeConfig = {
     loop: true, // ให้เพลงเล่นวนซ้ำ
   },
 
-  // 16. ตั้งค่า Metadata ของเว็บไซต์ (Site Metadata)
+  // ==========================================
+  // 16. ตั้งค่าหน้า 404 (Not Found Page)
+  // ==========================================
+  notFoundPage: {
+    title: "Look like you're lost", // หัวข้อหลัก
+    description: "the page you are looking for not avaible!", // คำอธิบาย
+    buttonText: "Go to Home", // ข้อความบนปุ่ม
+    buttonLink: "/", // ลิงก์เมื่อกดปุ่ม
+    terminalText: "> INITIALIZING RECOVERY PROTOCOL...\n> SCANNING DATABASE FOR MISSING SECTORS...\n> ERROR: DATA_SEGMENT_NOT_FOUND (404)\n> ATTEMPTING TO RE-ROUTE CONNECTION...\n> STATUS: FAILED.\n> RECOMMENDATION: RETURN TO BASE.", // ข้อความในหน้าจอ Terminal
+  },
+
+  // 17. ตั้งค่า Metadata ของเว็บไซต์ (Site Metadata)
   siteMetadata: {
     title: "My Resume Code By Krma", // ชื่อที่แสดงบนแท็บ Browser
     description: "Personal Resume Website", // คำอธิบายเว็บไซต์
