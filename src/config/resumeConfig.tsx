@@ -337,7 +337,16 @@ export const resumeConfig = {
     title: "Coding Projects", // หัวข้อหลัก
     subtitle:
       "Architecting robust solutions and innovative digital experiences", // คำอธิบายหน้า
-    projects: [],
+    projects: [
+      {
+        title: "Math Calculator",
+        description:
+          "A feature-rich mathematical calculator built to handle complex operations with precision and an intuitive interface.",
+        link: "https://math-calculator-by-heaven-developer.netlify.app/",
+        tech: "React, TypeScript, Tailwind CSS, Lucide React",
+        icon: <Code size={20} />,
+      },
+    ],
   },
 
   // ==========================================
